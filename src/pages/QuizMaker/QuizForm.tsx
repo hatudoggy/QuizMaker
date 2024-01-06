@@ -184,13 +184,16 @@ function HeaderBar(props: HeaderBarProps){
       backLink={linkSwitcher(data)}
       headerTitle={quizItem.title}
     >
-      <div
-        className='ml-3 self-end'
-      >
-        <LabelTag>  
-          External
-        </LabelTag>
-      </div>
+      {
+        data.dataType === 'external' &&
+          <div
+            className='ml-3 self-end'
+          >
+            <LabelTag>  
+              External
+            </LabelTag>
+          </div>
+      }
 
       {
         !props.showResult ?
